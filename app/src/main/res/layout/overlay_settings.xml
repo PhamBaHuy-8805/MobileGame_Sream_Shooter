@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settingsOverlayRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:background="@drawable/bg_overlay_dimmer"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Nhóm bảng cài đặt -->
+    <FrameLayout
+        android:id="@+id/settingsGroup"
+        android:layout_width="285dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center">
+
+        <!-- Khung nội dung -->
+        <FrameLayout
+            android:id="@+id/settingsPanel"
+            android:layout_width="285dp"
+            android:layout_height="140dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/bg_overlay_panel"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:paddingTop="20dp"
+                android:paddingBottom="6dp">
+
+                <!-- Âm thanh -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="76dp"
+                        android:layout_height="wrap_content"
+                        android:text="ÂM THANH"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
+
+                    <SeekBar
+                        android:id="@+id/seekVolume"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="4dp"
+                        android:max="100"
+                        android:progress="70"
+                        android:progressTint="#FFD400"
+                        android:thumbTint="#FFD400"
+                        android:progressBackgroundTint="#17141F" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <!-- Ngôn ngữ -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="76dp"
+                        android:layout_height="wrap_content"
+                        android:text="NGÔN NGỮ"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
+
+                    <Spinner
+                        android:id="@+id/spinnerLanguage"
+                        android:layout_width="0dp"
+                        android:layout_height="34dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/bg_language_spinner"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:spinnerMode="dropdown" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Tiêu đề căn giữa phía trên khung -->
+        <include
+            android:id="@+id/settingsTitle"
+            layout="@layout/view_overlay_title"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|center_horizontal"
+            android:elevation="4dp" />
+
+
+        <!-- Tiêu đề: hạ xuống một chút để không bị cắt dấu -->
+        <include
+            android:id="@+id/settingsTitle"
+            layout="@layout/view_overlay_title"
+            android:layout_width="130dp"
+            android:layout_height="44dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="0dp"
+            android:elevation="4dp" />
+
+        <!-- Nút X: căn theo góc trên bên phải của khung -->
+        <FrameLayout
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginTop="-2dp"
+            android:elevation="5dp">
+
+            <include
+                android:id="@+id/settingsClose"
+                layout="@layout/view_overlay_close"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+</FrameLayout>

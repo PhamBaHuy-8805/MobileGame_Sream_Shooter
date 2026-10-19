@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/achievementOverlayRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:background="@drawable/bg_overlay_dimmer"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Khung thành tích chính -->
+    <FrameLayout
+        android:id="@+id/achievementPanel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_overlay_panel"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:paddingTop="48dp"
+        android:paddingBottom="12dp"
+        android:clickable="true"
+        android:focusable="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+
+            <!-- Thành tích 1 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/achievementIcon1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="🏆"
+                    android:textSize="30sp"
+                    android:background="@drawable/bg_upgrade_price" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/achievementName1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="CHIẾN BINH VŨ TRỤ"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementDesc1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Đạt điểm số trong một lần chơi"
+                        android:textColor="#D6D2DD"
+                        android:textSize="10sp"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementProgressText1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0/100"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <ProgressBar
+                        android:id="@+id/achievementProgress1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/bg_achievement_progress" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/achievementReward1"
+                    android:layout_width="64dp"
+                    android:layout_height="34dp"
+                    android:gravity="center"
+                    android:text="100 ★"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_achievement_reward"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Thành tích 2 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/achievementIcon2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="💗"
+                    android:textSize="30sp"
+                    android:background="@drawable/bg_upgrade_price" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/achievementName2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BẤT KHẢ CHIẾN BẠI"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementDesc2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hoàn thành các trận chơi"
+                        android:textColor="#D6D2DD"
+                        android:textSize="10sp"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementProgressText2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0/3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <ProgressBar
+                        android:id="@+id/achievementProgress2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:max="3"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/bg_achievement_progress" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/achievementReward2"
+                    android:layout_width="64dp"
+                    android:layout_height="34dp"
+                    android:gravity="center"
+                    android:text="100 ★"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_achievement_reward"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+            <!-- Thành tích 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/achievementIcon3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="🧲"
+                    android:textSize="30sp"
+                    android:background="@drawable/bg_upgrade_price" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/achievementName3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TAY SĂN BÁU VẬT"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementDesc3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Thu thập sao trong game"
+                        android:textColor="#D6D2DD"
+                        android:textSize="10sp"
+                        android:maxLines="1" />
+
+                    <TextView
+                        android:id="@+id/achievementProgressText3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="0/100"
+                        android:textColor="#FFFFFF"
+                        android:textSize="10sp" />
+
+                    <ProgressBar
+                        android:id="@+id/achievementProgress3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:max="100"
+                        android:progress="0"
+                        android:progressDrawable="@drawable/bg_achievement_progress" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/achievementReward3"
+                    android:layout_width="64dp"
+                    android:layout_height="34dp"
+                    android:gravity="center"
+                    android:text="100 ★"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_achievement_reward"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Tiêu đề -->
+    <include
+        android:id="@+id/achievementTitle"
+        layout="@layout/view_overlay_title"
+        android:layout_width="210dp"
+        android:layout_height="44dp"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="16dp" />
+
+    <!-- Nút đóng -->
+    <include
+        android:id="@+id/achievementClose"
+        layout="@layout/view_overlay_close"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp" />
+
+</FrameLayout>

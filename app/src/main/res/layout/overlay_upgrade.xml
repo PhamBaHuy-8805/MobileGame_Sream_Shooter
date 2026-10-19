@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/upgradeOverlayRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:background="@drawable/bg_overlay_dimmer"
+    android:clickable="true"
+    android:focusable="true">
+
+    <!-- Nhóm nâng cấp đặt giữa màn hình -->
+    <FrameLayout
+        android:id="@+id/upgradeGroup"
+        android:layout_width="616dp"
+        android:layout_height="374dp"
+        android:layout_gravity="center">
+
+        <!-- Khung nền chính -->
+        <FrameLayout
+            android:id="@+id/upgradePanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_overlay_panel"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:paddingStart="48dp"
+                android:paddingEnd="48dp"
+                android:paddingTop="68dp"
+                android:paddingBottom="12dp">
+
+                <!-- Hàng 1: Máu - tối đa 5 cấp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/iconHealth"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:gravity="center"
+                        android:text="❤️"
+                        android:textSize="38sp"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Máu" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bg_upgrade_price">
+
+                        <View
+                            android:id="@+id/health1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/health2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/health3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/health4"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/health5"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/buyHealth"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="100"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Hàng 2: Tốc độ đạn - tối đa 3 cấp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/iconSpeed"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:gravity="center"
+                        android:text="🚀"
+                        android:textSize="38sp"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Tốc độ đạn" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bg_upgrade_price">
+
+                        <View
+                            android:id="@+id/speed1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/speed2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/speed3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/buySpeed"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="500"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Hàng 3: Thời gian kỹ năng - tối đa 3 cấp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/iconTime"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:gravity="center"
+                        android:text="⏱️"
+                        android:textSize="38sp"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Thời gian kỹ năng" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bg_upgrade_price">
+
+                        <View
+                            android:id="@+id/time1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/time2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/time3"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/buyTime"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="500"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="12dp" />
+
+                <!-- Hàng 4: Nam châm - tối đa 2 cấp -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/iconMagnet"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:gravity="center"
+                        android:text="🧲"
+                        android:textSize="38sp"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:contentDescription="Nam châm" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="4dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bg_upgrade_price">
+
+                        <View
+                            android:id="@+id/magnet1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:id="@+id/magnet2"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="2dp"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_upgrade_level_off" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/buyMagnet"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:gravity="center"
+                        android:text="10000"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:background="@drawable/bg_upgrade_price"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Tiêu đề NÂNG CẤP -->
+        <include
+            android:id="@+id/upgradeTitle"
+            layout="@layout/view_overlay_title"
+            android:layout_width="230dp"
+            android:layout_height="48dp"
+            android:layout_gravity="top|center_horizontal" />
+
+        <!-- Nút đóng -->
+        <include
+            android:id="@+id/upgradeClose"
+            layout="@layout/view_overlay_close"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginTop="-4dp" />
+
+    </FrameLayout>
+
+    <!-- Overlay chi tiết nâng cấp -->
+    <FrameLayout
+        android:id="@+id/upgradeDetailOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:background="#CC000000"
+        android:clickable="true"
+        android:focusable="true">
+
+        <FrameLayout
+            android:id="@+id/upgradeDetailPanel"
+            android:layout_width="340dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bg_overlay_panel"
+            android:padding="16dp"
+            android:clickable="true"
+            android:focusable="true">
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/upgradeDetailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:layout_marginEnd="36dp"
+                android:text="CHI TIẾT NÂNG CẤP"
+                android:textColor="#FFF0A0"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- Nút đóng -->
+            <TextView
+                android:id="@+id/upgradeDetailClose"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="top|end"
+                android:gravity="center"
+                android:text="×"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:background="@drawable/bg_overlay_close"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Đóng chi tiết" />
+
+            <!-- Mô tả nâng cấp -->
+            <TextView
+                android:id="@+id/upgradeDetailDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:gravity="center"
+                android:text="Mô tả nâng cấp"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:lineSpacingExtra="5dp" />
+
+            <!-- Cấp độ hiện tại -->
+            <TextView
+                android:id="@+id/upgradeDetailLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="40dp"
+                android:gravity="center"
+                android:text="Cấp độ hiện tại: 0"
+                android:textColor="#FFD400"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Hiệu quả cấp tiếp theo -->
+            <TextView
+                android:id="@+id/upgradeDetailNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Cấp tiếp theo: ..."
+                android:textColor="#B9E8FF"
+                android:textSize="14sp" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <!-- Hiển thị số sao: số trước, icon sao sau -->
+    <TextView
+        android:id="@+id/tvStarCount"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:minWidth="105dp"
+        android:gravity="center"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/bg_star_counter"
+        android:text="500 ★"
+        android:textColor="#FFD400"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:elevation="8dp" />
+
+</FrameLayout>

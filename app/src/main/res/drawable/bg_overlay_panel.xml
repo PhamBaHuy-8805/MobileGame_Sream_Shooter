@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Viền ngoài -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#17141F" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+
+    <!-- Viền trong và nền bảng -->
+    <item
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#625B6B" />
+            <stroke
+                android:width="2dp"
+                android:color="#9991A3" />
+            <corners android:radius="4dp" />
+        </shape>
+    </item>
+
+</layer-list>

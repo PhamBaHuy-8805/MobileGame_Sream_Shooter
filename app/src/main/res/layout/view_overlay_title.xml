@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/overlayTitleText"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="2dp"
+    android:includeFontPadding="true"
+    android:singleLine="true"
+    android:text="Cài Đặt"
+    android:textColor="#FFF0A0"
+    android:textSize="20sp"
+    android:textStyle="bold"
+    android:background="@drawable/bg_overlay_title" />

@@ -1,82 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#05091D">
 
-    <!-- BACKGROUND -->
+    <!-- NỀN VŨ TRỤ -->
     <ImageView
-        android:id="@+id/backgroundImage"
+        android:id="@+id/imgBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:src="@drawable/space_background"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"
+        android:contentDescription="Nền vũ trụ" />
 
-    <!-- LỚP PHỦ TỐI NHẸ -->
-    <View
+    <!-- LỚP GIAO DIỆN CHÍNH -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#30000000" />
+        android:layout_height="match_parent">
 
-    <!-- NỘI DUNG MENU -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:paddingTop="35dp">
+        <!-- AVATAR PHI HÀNH GIA -->
+        <LinearLayout
+            android:id="@+id/btnLogin"
+            android:layout_width="112dp"
+            android:layout_height="150dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_pixel_panel"
+            android:clickable="true"
+            android:focusable="true"
+            android:contentDescription="Đăng nhập">
 
-        <!-- TITLE -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="112dp"
+                android:src="@drawable/astronaut_avatar"
+                android:scaleType="fitCenter"
+                android:contentDescription="Phi hành gia" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="PILOT:\nSCREAMER"
+                android:textColor="#DCEBFF"
+                android:textSize="12sp"
+                android:background="#17243B"
+                android:fontFamily="monospace" />
+        </LinearLayout>
+
+        <!-- TIÊU ĐỀ GAME -->
         <TextView
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="42dp"
             android:text="SCREAM SHOOTER"
-            android:textColor="#FF70D8"
-            android:textSize="44sp"
+            android:textColor="#FF55D7"
+            android:textSize="70sp"
             android:textStyle="bold"
-            android:shadowColor="#8A00FF"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="15"
-            android:layout_marginBottom="35dp" />
+            android:fontFamily="sans"
+            android:shadowColor="#000000"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1.5"
+            android:includeFontPadding="false" />
 
-        <!-- PLAY -->
-        <Button
-            android:id="@+id/btnPlaying"
+        <!-- CÀI ĐẶT VÀ BẢNG XẾP HẠNG -->
+        <LinearLayout
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/btnSettings"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:background="@drawable/bg_pixel_panel"
+                android:src="@drawable/icon_settings"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:contentDescription="Cài đặt"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <ImageButton
+                android:id="@+id/btnLeaderboard"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_pixel_panel"
+                android:src="@drawable/icon_trophy_frame"
+                android:scaleType="fitCenter"
+                android:padding="5dp"
+                android:contentDescription="Bảng xếp hạng"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- CỤM NÚT CHÍNH -->
+        <LinearLayout
+            android:id="@+id/menuButtons"
             android:layout_width="300dp"
-            android:layout_height="65dp"
-            android:text="PLAY"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#241000"
-            android:background="@drawable/button_game"
-            android:layout_marginBottom="18dp" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:orientation="vertical">
 
-        <!-- UPDATE -->
-        <Button
-            android:id="@+id/btnUpdate"
-            android:layout_width="300dp"
-            android:layout_height="65dp"
-            android:text="UPDATE"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#241000"
-            android:background="@drawable/button_game"
-            android:layout_marginBottom="18dp" />
+            <!-- BẮT ĐẦU -->
+            <LinearLayout
+                android:id="@+id/btnStart"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_button_yellow"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:clickable="true"
+                android:focusable="true">
 
-        <!-- ACHIEVEMENTS -->
-        <Button
-            android:id="@+id/btnAchievement"
-            android:layout_width="300dp"
-            android:layout_height="65dp"
-            android:text="ACHIEVEMENTS"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#241000"
-            android:background="@drawable/button_game" />
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/icon_start_ship"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Tàu vũ trụ" />
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="BẮT ĐẦU"
+                    android:textColor="#17121B"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- NÂNG CẤP -->
+            <LinearLayout
+                android:id="@+id/btnUpgrade"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_button_yellow"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/icon_upgrade"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Nâng cấp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="NÂNG CẤP"
+                    android:textColor="#17121B"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+            <!-- THÀNH TÍCH -->
+            <LinearLayout
+                android:id="@+id/btnAchievement"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@drawable/bg_button_purple"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/icon_achievement"
+                    android:scaleType="fitCenter"
+                    android:contentDescription="Cúp thành tích" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="THÀNH TÍCH"
+                    android:textColor="#17121B"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
 
 </FrameLayout>
