@@ -17,6 +17,10 @@ import android.graphics.drawable.ClipDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.LayerDrawable;
 
+import com.example.screamshooter.activities.GameActivity;
+import com.example.screamshooter.activities.LeaderboardActivity;
+import com.example.screamshooter.data.LocalScoreManager;
+
 public class MainActivity extends Activity {
 
     private View btnStart, btnUpgrade, btnAchievement;
@@ -79,7 +83,7 @@ public class MainActivity extends Activity {
 
     private final TextView[] achievementProgressTexts = new TextView[3];
     private final TextView[] achievementRewardButtons = new TextView[3];
-    private final TextView[] achievementBars = new TextView[3];
+    private final android.widget.ProgressBar[] achievementProgressBars = new android.widget.ProgressBar[3];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,16 +116,16 @@ public class MainActivity extends Activity {
 
         starCount = upgradeOverlay.findViewById(R.id.tvStarCount);
 
-        // Tạo overlay thành tích bằng code
-        createAchievementOverlay(root);
+        // Tạo overlay thành tích từ XML layout
+        initAchievementOverlay(root);
 
         // BẮT ĐẦU GAME
         btnStart.setOnClickListener(v -> {
             try {
-                Intent intent = new Intent(
-                        MainActivity.this, GameView.class);
+                Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 startActivity(intent);
             } catch (Exception e) {
+                e.printStackTrace();
                 Toast.makeText(
                         MainActivity.this,
                         "Không thể mở màn chơi!",
@@ -169,19 +173,26 @@ public class MainActivity extends Activity {
 
         setupUpgradeSystem();
 
-        btnLeaderboard.setOnClickListener(v ->
-                Toast.makeText(
-                        this,
-                        "Chức năng bảng xếp hạng đang được phát triển",
-                        Toast.LENGTH_SHORT
-                ).show());
+        btnLeaderboard.setOnClickListener(v -> {
+            try {
+                Intent intent = new Intent(MainActivity.this, LeaderboardActivity.class);
+                startActivity(intent);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
 
-        btnLogin.setOnClickListener(v ->
-                Toast.makeText(
-                        this,
-                        "Chức năng đăng nhập đang được phát triển",
-                        Toast.LENGTH_SHORT
-                ).show());
+        btnLogin.setOnClickListener(v -> {
+            LocalScoreManager scoreManager = new LocalScoreManager(this);
+            int highScore = scoreManager.getHighScore();
+            int currentCoins = scoreManager.getCoins();
+
+            Toast.makeText(
+                    this,
+                    "PILOT: SCREAMER\nĐiểm cao nhất: " + highScore + " Pts | Sao: " + currentCoins + " ★",
+                    Toast.LENGTH_LONG
+            ).show();
+        });
     }
 
     private void hideOtherOverlays() {
@@ -194,172 +205,33 @@ public class MainActivity extends Activity {
     // TẠO GIAO DIỆN THÀNH TÍCH
     // =====================================================
 
-    private void createAchievementOverlay(ViewGroup root) {
+    private void initAchievementOverlay(ViewGroup root) {
+        achievementOverlay = getLayoutInflater().inflate(R.layout.overlay_achievement, root, false);
+        root.addView(achievementOverlay);
+        achievementOverlay.setVisibility(View.GONE);
 
-        FrameLayout overlay = new FrameLayout(this);
-        overlay.setLayoutParams(new FrameLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-        ));
-        overlay.setBackgroundColor(Color.parseColor("#CC000000"));
-        overlay.setVisibility(View.GONE);
-        overlay.setClickable(true);
-        overlay.setFocusable(true);
+        setOverlayTitle(achievementOverlay, R.id.achievementTitle, "THÀNH TÍCH");
 
-        FrameLayout panel = new FrameLayout(this);
-        FrameLayout.LayoutParams panelParams =
-                new FrameLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                );
+        achievementProgressTexts[0] = achievementOverlay.findViewById(R.id.achievementProgressText1);
+        achievementProgressTexts[1] = achievementOverlay.findViewById(R.id.achievementProgressText2);
+        achievementProgressTexts[2] = achievementOverlay.findViewById(R.id.achievementProgressText3);
 
-        panelParams.setMargins(
-                dp(24),
-                dp(18),
-                dp(24),
-                dp(18)
-        );
+        achievementRewardButtons[0] = achievementOverlay.findViewById(R.id.achievementReward1);
+        achievementRewardButtons[1] = achievementOverlay.findViewById(R.id.achievementReward2);
+        achievementRewardButtons[2] = achievementOverlay.findViewById(R.id.achievementReward3);
 
-        panelParams.gravity = Gravity.CENTER;
-        panel.setLayoutParams(panelParams);
-        panel.setLayoutParams(panelParams);
-        panel.setBackground(makeBackground("#625B70", "#17141F", 5, 12));
+        achievementProgressBars[0] = achievementOverlay.findViewById(R.id.achievementProgress1);
+        achievementProgressBars[1] = achievementOverlay.findViewById(R.id.achievementProgress2);
+        achievementProgressBars[2] = achievementOverlay.findViewById(R.id.achievementProgress3);
 
-        LinearLayout content = new LinearLayout(this);
-        content.setOrientation(LinearLayout.VERTICAL);
-        content.setPadding(dp(18), dp(42), dp(18), dp(8));
+        achievementRewardButtons[0].setOnClickListener(v -> claimAchievement(0));
+        achievementRewardButtons[1].setOnClickListener(v -> claimAchievement(1));
+        achievementRewardButtons[2].setOnClickListener(v -> claimAchievement(2));
 
-        FrameLayout.LayoutParams contentParams =
-                new FrameLayout.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                );
-        content.setLayoutParams(contentParams);
-
-        for (int i = 0; i < achievementNames.length; i++) {
-            final int index = i;
-
-            LinearLayout row = new LinearLayout(this);
-            row.setGravity(Gravity.CENTER_VERTICAL);
-            row.setOrientation(LinearLayout.HORIZONTAL);
-
-            LinearLayout.LayoutParams rowParams =
-                    new LinearLayout.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT,
-                            0,
-                            1
-                    );
-            rowParams.bottomMargin = dp(2);
-            row.setLayoutParams(rowParams);
-
-            TextView icon = new TextView(this);
-            icon.setText(achievementIcons[i]);
-            icon.setTextSize(27);
-            icon.setGravity(Gravity.CENTER);
-            icon.setBackground(makeBackground("#484456", "#17141F", 3, 8));
-
-            LinearLayout.LayoutParams iconParams =
-                    new LinearLayout.LayoutParams(dp(52), dp(58));
-            iconParams.rightMargin = dp(10);
-            row.addView(icon, iconParams);
-
-            LinearLayout middle = new LinearLayout(this);
-            middle.setOrientation(LinearLayout.VERTICAL);
-            middle.setGravity(Gravity.CENTER_VERTICAL);
-
-            LinearLayout.LayoutParams middleParams =
-                    new LinearLayout.LayoutParams(0,
-                            ViewGroup.LayoutParams.MATCH_PARENT, 1);
-            row.addView(middle, middleParams);
-
-            TextView title = new TextView(this);
-            title.setText(achievementNames[i]);
-            title.setTextColor(Color.WHITE);
-            title.setTextSize(14);
-            title.setTypeface(null, android.graphics.Typeface.BOLD);
-            middle.addView(title);
-
-            TextView description = new TextView(this);
-            description.setText(achievementDescriptions[i]);
-            description.setTextColor(Color.LTGRAY);
-            description.setTextSize(10);
-            middle.addView(description);
-
-            TextView progress = new TextView(this);
-            progress.setTextColor(Color.WHITE);
-            progress.setTextSize(11);
-            progress.setGravity(Gravity.CENTER);
-            achievementProgressTexts[i] = progress;
-            middle.addView(progress);
-
-            TextView bar = new TextView(this);
-            bar.setBackground(makeBackground("#302D3B", "#17141F", 2, 5));
-            achievementBars[i] = bar;
-
-            LinearLayout.LayoutParams barParams =
-                    new LinearLayout.LayoutParams(
-                            ViewGroup.LayoutParams.MATCH_PARENT, dp(12));
-            barParams.topMargin = dp(3);
-            middle.addView(bar, barParams);
-
-            TextView reward = new TextView(this);
-            reward.setText("100 ★");
-            reward.setTextColor(Color.WHITE);
-            reward.setTextSize(12);
-            reward.setGravity(Gravity.CENTER);
-            reward.setBackground(makeBackground("#777080", "#17141F", 2, 6));
-            reward.setClickable(true);
-            reward.setFocusable(true);
-
-            LinearLayout.LayoutParams rewardParams =
-                    new LinearLayout.LayoutParams(dp(68), dp(34));
-            rewardParams.leftMargin = dp(10);
-            row.addView(reward, rewardParams);
-
-            achievementRewardButtons[i] = reward;
-
-            reward.setOnClickListener(v -> claimAchievement(index));
-
-            content.addView(row);
+        View closeAchievement = achievementOverlay.findViewById(R.id.achievementClose);
+        if (closeAchievement != null) {
+            closeAchievement.setOnClickListener(v -> achievementOverlay.setVisibility(View.GONE));
         }
-
-        panel.addView(content);
-
-        TextView title = new TextView(this);
-        title.setText("THÀNH TÍCH");
-        title.setTextColor(Color.parseColor("#FFF0A0"));
-        title.setTextSize(20);
-        title.setTypeface(null, android.graphics.Typeface.BOLD);
-        title.setGravity(Gravity.CENTER);
-        title.setBackground(makeBackground("#A73830", "#17141F", 3, 8));
-
-        FrameLayout.LayoutParams titleParams =
-                new FrameLayout.LayoutParams(dp(220), dp(42));
-        titleParams.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
-        panel.addView(title, titleParams);
-
-        TextView close = new TextView(this);
-        close.setText("×");
-        close.setTextColor(Color.WHITE);
-        close.setTextSize(34);
-        close.setGravity(Gravity.CENTER);
-        close.setBackground(makeBackground("#8F3047", "#17141F", 3, 8));
-        close.setClickable(true);
-        close.setFocusable(true);
-
-        FrameLayout.LayoutParams closeParams =
-                new FrameLayout.LayoutParams(dp(48), dp(48));
-        closeParams.gravity = Gravity.TOP | Gravity.END;
-        closeParams.rightMargin = dp(-3);
-        closeParams.topMargin = dp(-3);
-        panel.addView(close, closeParams);
-
-        close.setOnClickListener(v ->
-                achievementOverlay.setVisibility(View.GONE));
-
-        overlay.addView(panel);
-        root.addView(overlay);
-        achievementOverlay = overlay;
     }
 
 // =====================================================
@@ -368,71 +240,36 @@ public class MainActivity extends Activity {
 
     private void updateAchievements() {
         for (int i = 0; i < achievementNames.length; i++) {
-
             int stage = achievementStage[i];
             int[] milestones = achievementMilestones[i];
             int[] rewards = achievementRewards[i];
 
             boolean completed = stage >= milestones.length;
+            int target = completed ? milestones[milestones.length - 1] : milestones[stage];
+            int rewardAmount = completed ? 0 : rewards[stage];
+            boolean canClaim = !completed && achievementProgress[i] >= target;
 
-            int target = completed
-                    ? milestones[milestones.length - 1]
-                    : milestones[stage];
-
-            int rewardAmount = completed
-                    ? 0
-                    : rewards[stage];
-
-            boolean canClaim = !completed
-                    && achievementProgress[i] >= target;
-
-            // Hiển thị tiến trình
             if (achievementProgressTexts[i] != null) {
                 achievementProgressTexts[i].setText(
-                        completed
-                                ? "Đã hoàn thành tất cả mốc"
-                                : achievementProgress[i] + "/" + target
+                        completed ? "Đã hoàn thành tất cả mốc" : achievementProgress[i] + "/" + target
                 );
             }
 
-            // Nút nhận thưởng
             TextView button = achievementRewardButtons[i];
-
             if (button != null) {
-                button.setText(
-                        completed ? "XONG" : rewardAmount + " ★"
-                );
-
+                button.setText(completed ? "XONG" : rewardAmount + " ★");
                 button.setEnabled(canClaim);
-
                 button.setBackground(makeBackground(
-                        canClaim
-                                ? Color.rgb(255, 210, 0)
-                                : Color.rgb(119, 112, 128),
-                        Color.BLACK,
-                        2,
-                        6
+                        canClaim ? Color.rgb(255, 210, 0) : Color.rgb(119, 112, 128),
+                        Color.BLACK, 2, 6
                 ));
-
-                button.setTextColor(
-                        canClaim
-                                ? Color.rgb(25, 20, 30)
-                                : Color.WHITE
-                );
+                button.setTextColor(canClaim ? Color.rgb(25, 20, 30) : Color.WHITE);
             }
 
-            // Thanh tiến trình
-            if (achievementBars[i] != null) {
-                float ratio = completed
-                        ? 1f
-                        : Math.min(
-                        1f,
-                        achievementProgress[i] / (float) target
-                );
-
-                achievementBars[i].setBackground(
-                        makeProgressBackground(ratio)
-                );
+            if (achievementProgressBars[i] != null) {
+                int progress = Math.min(target, achievementProgress[i]);
+                achievementProgressBars[i].setMax(target);
+                achievementProgressBars[i].setProgress(progress);
             }
         }
     }
@@ -834,5 +671,14 @@ public class MainActivity extends Activity {
         upgradeDetailOverlay.bringToFront();
 
         if (starCount != null) starCount.bringToFront();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LocalScoreManager scoreManager = new LocalScoreManager(this);
+        this.coins = scoreManager.getCoins();
+        updateStarCount();
+        updateUpgradeButtons();
     }
 }

@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Permissions for Hardware Sensors & Microphone -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+    <uses-feature android:name="android.hardware.microphone" android:required="true" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,16 +17,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScreamShooter"
         tools:targetApi="31">
+
+        <!-- Màn hình chính (Landscape theo thiết kế Figma) -->
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Màn chơi chính -->
+        <activity
+            android:name=".activities.GameActivity"
+            android:screenOrientation="landscape"
+            android:exported="false" />
+
+        <!-- Màn hình Game Over -->
+        <activity
+            android:name=".activities.GameOverActivity"
+            android:screenOrientation="landscape"
+            android:exported="false" />
+
+        <!-- Màn hình Bảng xếp hạng -->
+        <activity
+            android:name=".activities.LeaderboardActivity"
+            android:screenOrientation="landscape"
+            android:exported="false" />
+
     </application>
 
 </manifest>
