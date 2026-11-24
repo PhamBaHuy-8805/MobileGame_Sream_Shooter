@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Scream Shooter</string>
+    <string name="game_title">SCREAM SHOOTER</string>
+    <string name="game_subtitle">SPACE SURVIVAL ARCADE</string>
+    <string name="game_version">VERSION 2.0</string>
+
+    <string name="play_game">PLAY GAME</string>
+    <string name="upgrade">UPGRADES</string>
+    <string name="leaderboard">LEADERBOARD</string>
+    <string name="settings">SETTINGS</string>
+    <string name="back">BACK</string>
+
+    <string name="guest">Guest</string>
+    <string name="login_required">Sign in to compete</string>
+    <string name="player_name">Pilot: %1$s</string>
+    <string name="online_competition">ONLINE COMPETITION</string>
+    <string name="game_description">Tilt to control your spaceship. Scream to activate your skill. Conquer the global leaderboard.</string>
+
+    <string name="settings_title">SYSTEM SETTINGS</string>
+    <string name="sound_settings">SOUND</string>
+    <string name="volume">Media volume</string>
+    <string name="volume_percent">%1$d%%</string>
+    <string name="language">LANGUAGE</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+    <string name="language_description">Change the display language of the application.</string>
+
+    <string name="login">SIGN IN</string>
+    <string name="register">SIGN UP</string>
+    <string name="logout">SIGN OUT</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="display_name">Player name</string>
+    <string name="forgot_password">Forgot password?</string>
+
+    <string name="score">Score: %1$d</string>
+    <string name="lives">Lives: %1$d</string>
+    <string name="energy">Energy: %1$d%%</string>
+    <string name="high_score">High score</string>
+    <string name="rank">Rank</string>
+    <string name="game_over">GAME OVER</string>
+    <string name="restart">PLAY AGAIN</string>
+    <string name="home">HOME</string>
+
+    <string name="loading">Loading...</string>
+    <string name="network_error">Unable to connect to the server.</string>
+    <string name="auth_title">PILOT ACCOUNT</string>
+    <string name="auth_description">Sign in to save your achievements and compete with players around the world.</string>
+
+    <string name="leaderboard_top10">TOP 10 LEADERBOARD</string>
+    <string name="leaderboard_player">PLAYER</string>
+    <string name="leaderboard_score">SCORE</string>
+
+    <string name="final_score">Final score: %1$d</string>
+    <string name="mission_failed">MISSION ENDED</string>
+    <string name="game_over_description">Keep fighting to break your personal record.</string>
+
+    <string name="upgrade_title">EQUIPMENT UPGRADES</string>
+    <string name="coin_balance">Balance: %1$d Coins</string>
+    <string name="upgrade_health">Increase health</string>
+    <string name="upgrade_missile">Increase missile damage</string>
+    <string name="upgrade_cooldown">Reduce skill cooldown</string>
+    <string name="upgrade_price">100 Coins</string>
+    <string name="upgrade_success">Upgrade successful: %1$s</string>
+    <string name="not_enough_coins">Not enough coins!</string>
+
+    <string name="pause">PAUSED</string>
+    <string name="resume">RESUME</string>
+
+    <string name="auth_missing_fields">Please complete all required fields!</string>
+    <string name="auth_missing_name">Please complete all fields and enter your player name!</string>
+    <string name="login_success">Signed in successfully!</string>
+    <string name="register_success">Account created successfully!</string>
+    <string name="login_failed">Sign-in failed!</string>
+    <string name="register_failed">Registration failed!</string>
+    <string name="profile_update_failed">Unable to update player name.</string>
+    <string name="upgrade_coin">Coin income</string>
+    <string name="upgrade_fire_rate">Fire rate</string>
+    <string name="upgrade_energy">Energy recharge</string>
+    <string name="upgrade_speed">Movement speed</string>
+
+    <string name="max_level">MAX LEVEL</string>
+    <string name="purchase_cost">%1$s Coins</string>
+
+    <string name="upgrade_health_detail">%1$d → %2$d lives</string>
+    <string name="upgrade_coin_detail">%1$d → %2$d Coins/kill</string>
+    <string name="upgrade_fire_detail">%1$d → %2$d ms/shot</string>
+    <string name="upgrade_energy_detail">%1$d → %2$d energy/kill</string>
+    <string name="upgrade_speed_detail">%1$d%% → %2$d%% speed</string>
+
+    <string name="upgrade_completed">Upgrade successful!</string>
+    <string name="upgrade_failed">Upgrade failed. Please try again.</string>
+
+    <string name="match_coins">Coins: %1$d</string>
+    <string name="match_kills">Kills: %1$d</string>
+    <string name="reward_coins">+%1$d Coins</string>
+
+    <string name="ultimate_skill">ULTIMATE SCREAM!</string>
+
+    <string name="saving_result">Saving results to Firebase...</string>
+    <string name="result_saved">Score and coins saved.</string>
+    <string name="result_save_failed">Save failed. Please check your connection.</string>
+    <string name="retry_save">RETRY</string>
+    <string name="leave_unsaved_match">Your result has not been saved. Leave and discard your match rewards?</string>
+</resources>

@@ -1,4 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Scream Shooter</string>
 
+
+    <string name="app_name">Scream Shooter</string>
+    <string name="game_title">SCREAM SHOOTER</string>
+    <string name="game_subtitle">CHIẾN ĐẤU NGOÀI KHÔNG GIAN</string>
+    <string name="game_version">VERSION 2.0</string>
+
+    <string name="play_game">BẮT ĐẦU CHƠI</string>
+    <string name="upgrade">NÂNG CẤP</string>
+    <string name="leaderboard">BẢNG XẾP HẠNG</string>
+    <string name="settings">CÀI ĐẶT</string>
+    <string name="back">QUAY LẠI</string>
+
+    <string name="guest">Khách</string>
+    <string name="login_required">Đăng nhập để tham gia thi đấu</string>
+    <string name="player_name">Phi công: %1$s</string>
+    <string name="online_competition">THI ĐẤU TRỰC TUYẾN</string>
+    <string name="game_description">Điều khiển bằng cảm biến. Kích hoạt kỹ năng bằng tiếng hét. Chinh phục bảng xếp hạng toàn cầu.</string>
+
+    <string name="settings_title">CÀI ĐẶT HỆ THỐNG</string>
+    <string name="sound_settings">ÂM THANH</string>
+    <string name="volume">Âm lượng đa phương tiện</string>
+    <string name="volume_percent">%1$d%%</string>
+    <string name="language">NGÔN NGỮ</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+    <string name="language_description">Thay đổi ngôn ngữ hiển thị của ứng dụng.</string>
+
+    <string name="login">ĐĂNG NHẬP</string>
+    <string name="register">ĐĂNG KÝ</string>
+    <string name="logout">ĐĂNG XUẤT</string>
+    <string name="email">Email</string>
+    <string name="password">Mật khẩu</string>
+    <string name="display_name">Tên người chơi</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+
+    <string name="score">Điểm: %1$d</string>
+    <string name="lives">Mạng: %1$d</string>
+    <string name="energy">Năng lượng: %1$d%%</string>
+    <string name="high_score">Điểm cao nhất</string>
+    <string name="rank">Thứ hạng</string>
+    <string name="game_over">KẾT THÚC TRẬN ĐẤU</string>
+    <string name="restart">CHƠI LẠI</string>
+    <string name="home">TRANG CHỦ</string>
+
+    <string name="loading">Đang tải...</string>
+    <string name="network_error">Không thể kết nối máy chủ.</string>
+    <string name="auth_title">TÀI KHOẢN PHI CÔNG</string>
+    <string name="auth_description">Đăng nhập để lưu thành tích và cạnh tranh với những người chơi khác trên toàn thế giới.</string>
+
+    <string name="leaderboard_top10">BẢNG XẾP HẠNG TOP 10</string>
+    <string name="leaderboard_player">NGƯỜI CHƠI</string>
+    <string name="leaderboard_score">ĐIỂM SỐ</string>
+
+    <string name="final_score">Điểm đạt được: %1$d</string>
+    <string name="mission_failed">NHIỆM VỤ KẾT THÚC</string>
+    <string name="game_over_description">Tiếp tục chiến đấu để phá vỡ kỷ lục của bạn.</string>
+
+    <string name="upgrade_title">NÂNG CẤP TRANG BỊ</string>
+    <string name="coin_balance">Tài nguyên: %1$d Coin</string>
+    <string name="upgrade_health">Tăng máu</string>
+    <string name="upgrade_missile">Tăng sát thương tên lửa</string>
+    <string name="upgrade_cooldown">Giảm thời gian hồi kỹ năng</string>
+    <string name="upgrade_price">100 Coin</string>
+    <string name="upgrade_success">Nâng cấp thành công: %1$s</string>
+    <string name="not_enough_coins">Không đủ Coin để nâng cấp!</string>
+
+    <string name="pause">TẠM DỪNG</string>
+    <string name="resume">TIẾP TỤC</string>
+
+    <string name="auth_missing_fields">Vui lòng nhập đầy đủ thông tin!</string>
+    <string name="auth_missing_name">Vui lòng nhập đầy đủ thông tin và tên hiển thị!</string>
+    <string name="login_success">Đăng nhập thành công!</string>
+    <string name="register_success">Đăng ký thành công!</string>
+    <string name="login_failed">Đăng nhập thất bại!</string>
+    <string name="register_failed">Đăng ký thất bại!</string>
+    <string name="profile_update_failed">Không thể cập nhật tên người chơi.</string>
+    <string name="upgrade_coin">Thu nhập Coin</string>
+    <string name="upgrade_fire_rate">Tốc độ bắn</string>
+    <string name="upgrade_energy">Nạp năng lượng</string>
+    <string name="upgrade_speed">Tốc độ di chuyển</string>
+
+    <string name="max_level">TỐI ĐA</string>
+    <string name="purchase_cost">%1$s Coin</string>
+
+    <string name="upgrade_health_detail">%1$d → %2$d mạng</string>
+    <string name="upgrade_coin_detail">%1$d → %2$d Coin/kill</string>
+    <string name="upgrade_fire_detail">%1$d → %2$d ms/viên đạn</string>
+    <string name="upgrade_energy_detail">%1$d → %2$d năng lượng/kill</string>
+    <string name="upgrade_speed_detail">%1$d%% → %2$d%% tốc độ</string>
+
+    <string name="upgrade_completed">Nâng cấp thành công!</string>
+    <string name="upgrade_failed">Không thể nâng cấp. Vui lòng thử lại.</string>
+
+    <string name="match_coins">Coin: %1$d</string>
+    <string name="match_kills">Tiêu diệt: %1$d</string>
+    <string name="reward_coins">+%1$d Coin</string>
+
+    <string name="ultimate_skill">ULTIMATE SCREAM!</string>
+
+    <string name="saving_result">Đang lưu kết quả lên Firebase...</string>
+    <string name="result_saved">Đã lưu thành tích và Coin.</string>
+    <string name="result_save_failed">Lưu thất bại. Vui lòng kiểm tra kết nối mạng.</string>
+    <string name="retry_save">THỬ LẠI</string>
+    <string name="leave_unsaved_match">Kết quả chưa được lưu. Bạn có muốn thoát và bỏ phần thưởng trận đấu không?</string>
 </resources>

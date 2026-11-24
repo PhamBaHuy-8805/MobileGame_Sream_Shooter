@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "581509516373",
+    "project_id": "screamshooter-df096",
+    "storage_bucket": "screamshooter-df096.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581509516373:android:3a68ac47894cbef5c518dc",
+        "android_client_info": {
+          "package_name": "com.example.screamshooter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNFzBkytumVbqdm6KLZMIpD9i0TmcY1bQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

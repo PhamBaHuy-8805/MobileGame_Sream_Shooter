@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Permissions for Hardware Sensors & Microphone -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
-    <uses-feature android:name="android.hardware.microphone" android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -18,34 +17,59 @@
         android:theme="@style/Theme.ScreamShooter"
         tools:targetApi="31">
 
-        <!-- Màn hình chính (Landscape theo thiết kế Figma) -->
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+
+        </service>
+
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="landscape"
+            android:name=".ui.home.MainActivity"
+            android:screenOrientation="sensorLandscape"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <!-- Màn chơi chính -->
         <activity
-            android:name=".activities.GameActivity"
-            android:screenOrientation="landscape"
+            android:name=".ui.game.GameActivity"
+            android:screenOrientation="sensorLandscape"
             android:exported="false" />
 
-        <!-- Màn hình Game Over -->
         <activity
-            android:name=".activities.GameOverActivity"
-            android:screenOrientation="landscape"
+            android:name=".ui.game.GameOverActivity"
+            android:screenOrientation="sensorLandscape"
             android:exported="false" />
 
-        <!-- Màn hình Bảng xếp hạng -->
         <activity
-            android:name=".activities.LeaderboardActivity"
-            android:screenOrientation="landscape"
+            android:name=".ui.achievement.AchievementActivity"
+            android:screenOrientation="sensorLandscape"
             android:exported="false" />
+
+        <activity
+            android:name=".ui.shop.UpgradeActivity"
+            android:screenOrientation="sensorLandscape"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.setting.SettingsActivity"
+            android:screenOrientation="sensorLandscape"
+            android:exported="false" />
+
+        <activity
+        android:name=".ui.auth.AuthActivity"
+        android:screenOrientation="sensorLandscape"
+        android:windowSoftInputMode="adjustResize|stateAlwaysHidden"
+        android:exported="false" />
 
     </application>
 
