@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Scream Shooter</string>
+
+    <!-- Shared -->
+    <string name="close">Close</string>
+    <string name="back">Back</string>
+    <string name="settings_title">SETTINGS</string>
+    <string name="sound_title">SOUND</string>
+    <string name="btn_resume">RESUME</string>
+    <string name="btn_home">HOME</string>
+    <string name="score_pts">%1$d Pts</string>
+    <string name="player_placeholder">Player</string>
+    <string name="default_player_name">Ship X</string>
+    <string name="progress_format">%1$d/%2$d</string>
+    <string name="reward_format">%1$d ★</string>
+    <string name="settings_volume_percent">%1$d%%</string>
+    <string name="pause_action">Pause</string>
+
+    <string name="cd_space_background">Space background</string>
+    <string name="cd_astronaut">Astronaut</string>
+    <string name="cd_profile">Pilot profile</string>
+    <string name="cd_settings">Settings</string>
+    <string name="cd_leaderboard">Leaderboard</string>
+    <string name="cd_start_ship">Spaceship</string>
+    <string name="cd_upgrade">Upgrade</string>
+    <string name="cd_achievement">Achievement trophy</string>
+
+    <!-- Main screen -->
+    <string name="main_pilot">PILOT:\nSCREAMER</string>
+    <string name="title_scream_shooter">SCREAM SHOOTER</string>
+    <string name="btn_start">START</string>
+    <string name="btn_upgrade">UPGRADE</string>
+    <string name="btn_achievement">ACHIEVEMENTS</string>
+    <string name="profile_toast">PILOT: SCREAMER\nHigh score: %1$d Pts | Stars: %2$d ★</string>
+
+    <!-- Settings -->
+    <string name="settings_sound">SOUND</string>
+    <string name="settings_language">LANGUAGE</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+
+    <!-- Upgrades -->
+    <string name="upgrade_title">UPGRADE</string>
+    <string name="upgrade_health">HEALTH</string>
+    <string name="upgrade_bullet_speed">BULLET SPEED</string>
+    <string name="upgrade_skill_time">SKILL DURATION</string>
+    <string name="upgrade_magnet">MAGNET</string>
+    <string name="upgrade_detail_title">UPGRADE DETAILS</string>
+    <string name="upgrade_detail_close">Close details</string>
+    <string name="upgrade_level_format">Current level: %1$d/%2$d</string>
+    <string name="upgrade_max">MAX</string>
+    <string name="upgrade_max_reached">Maximum level reached!</string>
+    <string name="upgrade_health_desc">Increases the ship\'s survivability.</string>
+    <string name="upgrade_health_next">Next level: +1 max HP.</string>
+    <string name="upgrade_speed_desc">Increases fire rate and bullet speed.</string>
+    <string name="upgrade_speed_next">Next level: faster fire and bullets.</string>
+    <string name="upgrade_time_desc">Extends the duration of the scream skill.</string>
+    <string name="upgrade_time_next">Next level: +1 second duration.</string>
+    <string name="upgrade_magnet_desc">Attracts nearby stars.</string>
+    <string name="upgrade_magnet_next">Next level: larger attraction radius.</string>
+    <string name="upgrade_success">Upgrade successful! %1$d ★ remaining</string>
+    <string name="upgrade_not_enough">Not enough stars! Need %1$d ★</string>
+
+    <!-- Achievements -->
+    <string name="achievement_title">ACHIEVEMENTS</string>
+    <string name="achievement_1_name">SPACE WARRIOR</string>
+    <string name="achievement_1_desc">Score points in a single run</string>
+    <string name="achievement_2_name">UNSTOPPABLE</string>
+    <string name="achievement_2_desc">Complete matches</string>
+    <string name="achievement_3_name">TREASURE HUNTER</string>
+    <string name="achievement_3_desc">Collect stars in the game</string>
+    <string name="achievement_completed">All milestones completed</string>
+    <string name="achievement_done">DONE</string>
+    <string name="achievement_already_complete">You have completed this achievement!</string>
+    <string name="achievement_not_reached">Milestone %1$d not reached yet!</string>
+    <string name="achievement_claim_success">Claimed %1$d ★!</string>
+
+    <!-- In game -->
+    <string name="game_cannot_open">Cannot start the game!</string>
+    <string name="game_energy_full">⚡ Energy full! Scream into the mic to activate the skill!</string>
+    <string name="game_skill_activated">⚡ SUPER SCREAM SKILL ACTIVATED!</string>
+    <string name="hud_score">SCORE: %1$d</string>
+    <string name="hud_hp">"HP: "</string>
+    <string name="hud_energy">ENERGY: %1$d%%</string>
+    <string name="hud_skill_ready">⚡ SCREAM LOUDLY TO ACTIVATE THE SKILL! (&gt;70dB)</string>
+    <string name="hud_skill_active">⚡ SUPER SCREAM SKILL ACTIVE ⚡</string>
+    <string name="hud_stars">★ %1$d</string>
+
+    <!-- Pause -->
+    <string name="pause_title">PAUSED</string>
+
+    <!-- Game Over -->
+    <string name="game_over_title">GAME OVER</string>
+    <string name="game_over_score">SCORE: %1$d</string>
+    <string name="game_over_high_score">HIGH SCORE: %1$d</string>
+    <string name="game_over_stars">STARS COLLECTED: %1$d ★</string>
+    <string name="btn_restart">PLAY AGAIN</string>
+
+    <!-- Leaderboard -->
+    <string name="leaderboard_title">TOP 10 LEADERBOARD</string>
+</resources>

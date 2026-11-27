@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:src="@drawable/space_background"
         android:scaleType="centerCrop"
-        android:contentDescription="Nền vũ trụ" />
+        android:contentDescription="@string/cd_space_background" />
 
     <!-- LỚP GIAO DIỆN CHÍNH -->
     <FrameLayout
@@ -31,20 +31,20 @@
             android:background="@drawable/bg_pixel_panel"
             android:clickable="true"
             android:focusable="true"
-            android:contentDescription="Đăng nhập">
+            android:contentDescription="@string/cd_profile">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="112dp"
                 android:src="@drawable/astronaut_avatar"
                 android:scaleType="fitCenter"
-                android:contentDescription="Phi hành gia" />
+                android:contentDescription="@string/cd_astronaut" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="PILOT:\nSCREAMER"
+                android:text="@string/main_pilot"
                 android:textColor="#DCEBFF"
                 android:textSize="12sp"
                 android:background="#17243B"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="top|center_horizontal"
             android:layout_marginTop="42dp"
-            android:text="SCREAM SHOOTER"
+            android:text="@string/title_scream_shooter"
             android:textColor="#FF55D7"
             android:textSize="70sp"
             android:textStyle="bold"
@@ -86,7 +86,7 @@
                 android:src="@drawable/icon_settings"
                 android:scaleType="fitCenter"
                 android:padding="5dp"
-                android:contentDescription="Cài đặt"
+                android:contentDescription="@string/cd_settings"
                 android:clickable="true"
                 android:focusable="true" />
 
@@ -99,7 +99,7 @@
                 android:src="@drawable/icon_trophy_frame"
                 android:scaleType="fitCenter"
                 android:padding="5dp"
-                android:contentDescription="Bảng xếp hạng"
+                android:contentDescription="@string/cd_leaderboard"
                 android:clickable="true"
                 android:focusable="true" />
         </LinearLayout>
@@ -131,14 +131,14 @@
                     android:layout_height="42dp"
                     android:src="@drawable/icon_start_ship"
                     android:scaleType="fitCenter"
-                    android:contentDescription="Tàu vũ trụ" />
+                    android:contentDescription="@string/cd_start_ship" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="BẮT ĐẦU"
+                    android:text="@string/btn_start"
                     android:textColor="#17121B"
                     android:textSize="21sp"
                     android:textStyle="bold"
@@ -164,14 +164,14 @@
                     android:layout_height="42dp"
                     android:src="@drawable/icon_upgrade"
                     android:scaleType="fitCenter"
-                    android:contentDescription="Nâng cấp" />
+                    android:contentDescription="@string/cd_upgrade" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="NÂNG CẤP"
+                    android:text="@string/btn_upgrade"
                     android:textColor="#17121B"
                     android:textSize="21sp"
                     android:textStyle="bold"
@@ -197,14 +197,14 @@
                     android:layout_height="42dp"
                     android:src="@drawable/icon_achievement"
                     android:scaleType="fitCenter"
-                    android:contentDescription="Cúp thành tích" />
+                    android:contentDescription="@string/cd_achievement" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="THÀNH TÍCH"
+                    android:text="@string/btn_achievement"
                     android:textColor="#17121B"
                     android:textSize="20sp"
                     android:textStyle="bold"

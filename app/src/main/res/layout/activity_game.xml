@@ -24,6 +24,7 @@
         android:text="❚❚"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:contentDescription="@string/pause_action" />
 
 </FrameLayout>

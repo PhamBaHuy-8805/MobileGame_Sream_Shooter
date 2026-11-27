@@ -1,6 +1,5 @@
 package com.example.screamshooter.activities;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +14,7 @@ import com.example.screamshooter.models.ScoreRecord;
 
 import java.util.List;
 
-public class LeaderboardActivity extends Activity {
+public class LeaderboardActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,7 @@ public class LeaderboardActivity extends Activity {
 
             tvRank.setText(String.valueOf(position + 1));
             tvPlayerName.setText(record.getPlayerName());
-            tvScore.setText(record.getScore() + " Pts");
+            tvScore.setText(getString(R.string.score_pts, record.getScore()));
 
             return convertView;
         }

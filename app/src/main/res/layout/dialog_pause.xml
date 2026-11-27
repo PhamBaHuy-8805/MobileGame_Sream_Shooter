@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TẠM DỪNG"
+        android:text="@string/pause_title"
         android:textColor="#FFF0A0"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -23,7 +23,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/bg_button_yellow"
         android:gravity="center"
-        android:text="TIẾP TỤC"
+        android:text="@string/btn_resume"
         android:textColor="#1A1820"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_button_yellow"
         android:gravity="center"
-        android:text="CÀI ĐẶT"
+        android:text="@string/sound_title"
         android:textColor="#1A1820"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -47,7 +47,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/bg_button_purple"
         android:gravity="center"
-        android:text="VỀ TRANG CHỦ"
+        android:text="@string/btn_home"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />

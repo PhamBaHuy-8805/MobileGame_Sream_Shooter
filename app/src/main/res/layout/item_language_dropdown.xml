@@ -7,6 +7,7 @@
     android:paddingStart="12dp"
     android:paddingEnd="8dp"
     android:background="#383344"
+    android:text="@string/language_vi"
     android:textColor="#FFE51A"
     android:textSize="14sp"
     android:textStyle="bold"

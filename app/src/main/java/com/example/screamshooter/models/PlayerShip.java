@@ -36,9 +36,12 @@ public class PlayerShip {
 
     private Paint paint;
 
-    public PlayerShip(Context context, float screenWidth, float screenHeight) {
+    public PlayerShip(Context context, float screenWidth, float screenHeight, int maxHealth) {
         this.width = screenWidth * 0.14f;
         this.height = this.width;
+
+        this.maxHealth = Math.max(1, maxHealth);
+        this.currentHealth = this.maxHealth;
 
         this.x = (screenWidth - width) / 2f;
         this.y = screenHeight - height - 120f;

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:singleLine="true"
-    android:text="TIẾNG VIỆT"
+    android:text="@string/language_vi"
     android:textColor="#FFE51A"
     android:textSize="14sp"
     android:textStyle="bold"

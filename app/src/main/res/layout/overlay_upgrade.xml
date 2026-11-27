@@ -8,14 +8,12 @@
     android:clickable="true"
     android:focusable="true">
 
-    <!-- Nhóm nâng cấp đặt giữa màn hình -->
     <FrameLayout
         android:id="@+id/upgradeGroup"
         android:layout_width="616dp"
         android:layout_height="374dp"
         android:layout_gravity="center">
 
-        <!-- Khung nền chính -->
         <FrameLayout
             android:id="@+id/upgradePanel"
             android:layout_width="match_parent"
@@ -51,7 +49,7 @@
                         android:background="@drawable/bg_upgrade_price"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="Máu" />
+                        android:contentDescription="@string/upgrade_health" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -63,44 +61,11 @@
                         android:orientation="horizontal"
                         android:background="@drawable/bg_upgrade_price">
 
-                        <View
-                            android:id="@+id/health1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/health2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/health3"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/health4"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/health5"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
+                        <View android:id="@+id/health1" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/health2" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/health3" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/health4" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/health5" style="@style/UpgradeLevelCell" />
                     </LinearLayout>
 
                     <TextView
@@ -108,7 +73,7 @@
                         android:layout_width="88dp"
                         android:layout_height="48dp"
                         android:gravity="center"
-                        android:text="100"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         android:textStyle="bold"
@@ -138,7 +103,7 @@
                         android:background="@drawable/bg_upgrade_price"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="Tốc độ đạn" />
+                        android:contentDescription="@string/upgrade_bullet_speed" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -150,43 +115,9 @@
                         android:orientation="horizontal"
                         android:background="@drawable/bg_upgrade_price">
 
-                        <View
-                            android:id="@+id/speed1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/speed2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/speed3"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-
+                        <View android:id="@+id/speed1" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/speed2" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/speed3" style="@style/UpgradeLevelCell" />
                     </LinearLayout>
 
                     <TextView
@@ -194,7 +125,7 @@
                         android:layout_width="88dp"
                         android:layout_height="48dp"
                         android:gravity="center"
-                        android:text="500"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         android:textStyle="bold"
@@ -224,7 +155,7 @@
                         android:background="@drawable/bg_upgrade_price"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="Thời gian kỹ năng" />
+                        android:contentDescription="@string/upgrade_skill_time" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -236,43 +167,9 @@
                         android:orientation="horizontal"
                         android:background="@drawable/bg_upgrade_price">
 
-                        <View
-                            android:id="@+id/time1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/time2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/time3"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-
+                        <View android:id="@+id/time1" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/time2" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/time3" style="@style/UpgradeLevelCell" />
                     </LinearLayout>
 
                     <TextView
@@ -280,7 +177,7 @@
                         android:layout_width="88dp"
                         android:layout_height="48dp"
                         android:gravity="center"
-                        android:text="500"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="24sp"
                         android:textStyle="bold"
@@ -310,7 +207,7 @@
                         android:background="@drawable/bg_upgrade_price"
                         android:clickable="true"
                         android:focusable="true"
-                        android:contentDescription="Nam châm" />
+                        android:contentDescription="@string/upgrade_magnet" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -322,42 +219,8 @@
                         android:orientation="horizontal"
                         android:background="@drawable/bg_upgrade_price">
 
-                        <View
-                            android:id="@+id/magnet1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:id="@+id/magnet2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:layout_marginEnd="2dp"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_upgrade_level_off" />
-
+                        <View android:id="@+id/magnet1" style="@style/UpgradeLevelCell" android:layout_marginEnd="2dp" />
+                        <View android:id="@+id/magnet2" style="@style/UpgradeLevelCell" />
                     </LinearLayout>
 
                     <TextView
@@ -365,7 +228,7 @@
                         android:layout_width="88dp"
                         android:layout_height="48dp"
                         android:gravity="center"
-                        android:text="10000"
+                        android:text="0"
                         android:textColor="#FFFFFF"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -377,7 +240,6 @@
             </LinearLayout>
         </FrameLayout>
 
-        <!-- Tiêu đề NÂNG CẤP -->
         <include
             android:id="@+id/upgradeTitle"
             layout="@layout/view_overlay_title"
@@ -385,7 +247,6 @@
             android:layout_height="48dp"
             android:layout_gravity="top|center_horizontal" />
 
-        <!-- Nút đóng -->
         <include
             android:id="@+id/upgradeClose"
             layout="@layout/view_overlay_close"
@@ -417,7 +278,6 @@
             android:clickable="true"
             android:focusable="true">
 
-            <!-- Tiêu đề -->
             <TextView
                 android:id="@+id/upgradeDetailTitle"
                 android:layout_width="match_parent"
@@ -425,12 +285,11 @@
                 android:layout_gravity="top"
                 android:gravity="center"
                 android:layout_marginEnd="36dp"
-                android:text="CHI TIẾT NÂNG CẤP"
+                android:text="@string/upgrade_detail_title"
                 android:textColor="#FFF0A0"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <!-- Nút đóng -->
             <TextView
                 android:id="@+id/upgradeDetailClose"
                 android:layout_width="36dp"
@@ -443,21 +302,19 @@
                 android:background="@drawable/bg_overlay_close"
                 android:clickable="true"
                 android:focusable="true"
-                android:contentDescription="Đóng chi tiết" />
+                android:contentDescription="@string/upgrade_detail_close" />
 
-            <!-- Mô tả nâng cấp -->
             <TextView
                 android:id="@+id/upgradeDetailDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="55dp"
                 android:gravity="center"
-                android:text="Mô tả nâng cấp"
+                android:text="@string/upgrade_health_desc"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:lineSpacingExtra="5dp" />
 
-            <!-- Cấp độ hiện tại -->
             <TextView
                 android:id="@+id/upgradeDetailLevel"
                 android:layout_width="match_parent"
@@ -465,26 +322,24 @@
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="40dp"
                 android:gravity="center"
-                android:text="Cấp độ hiện tại: 0"
+                android:text=""
                 android:textColor="#FFD400"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Hiệu quả cấp tiếp theo -->
             <TextView
                 android:id="@+id/upgradeDetailNext"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:gravity="center"
-                android:text="Cấp tiếp theo: ..."
+                android:text=""
                 android:textColor="#B9E8FF"
                 android:textSize="14sp" />
 
         </FrameLayout>
     </FrameLayout>
 
-    <!-- Hiển thị số sao: số trước, icon sao sau -->
     <TextView
         android:id="@+id/tvStarCount"
         android:layout_width="wrap_content"
@@ -497,7 +352,7 @@
         android:paddingStart="12dp"
         android:paddingEnd="12dp"
         android:background="@drawable/bg_star_counter"
-        android:text="500 ★"
+        android:text="0 ★"
         android:textColor="#FFD400"
         android:textSize="15sp"
         android:textStyle="bold"

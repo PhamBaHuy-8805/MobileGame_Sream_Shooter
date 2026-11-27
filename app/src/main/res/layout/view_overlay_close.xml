@@ -13,4 +13,4 @@
     android:background="@drawable/bg_overlay_close"
     android:clickable="true"
     android:focusable="true"
-    android:contentDescription="Đóng cài đặt" />
+    android:contentDescription="@string/close" />

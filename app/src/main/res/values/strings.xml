@@ -1,4 +1,101 @@
 <resources>
     <string name="app_name">Scream Shooter</string>
 
+    <!-- Dùng chung -->
+    <string name="close">Đóng</string>
+    <string name="back">Quay lại</string>
+    <string name="settings_title">CÀI ĐẶT</string>
+    <string name="sound_title">ÂM THANH</string>
+    <string name="btn_resume">TIẾP TỤC</string>
+    <string name="btn_home">VỀ TRANG CHỦ</string>
+    <string name="score_pts">%1$d Pts</string>
+    <string name="player_placeholder">Người chơi</string>
+    <string name="default_player_name">Phi Thuyền X</string>
+    <string name="progress_format">%1$d/%2$d</string>
+    <string name="reward_format">%1$d ★</string>
+    <string name="settings_volume_percent">%1$d%%</string>
+    <string name="pause_action">Tạm dừng</string>
+
+    <string name="cd_space_background">Nền vũ trụ</string>
+    <string name="cd_astronaut">Phi hành gia</string>
+    <string name="cd_profile">Hồ sơ phi công</string>
+    <string name="cd_settings">Cài đặt</string>
+    <string name="cd_leaderboard">Bảng xếp hạng</string>
+    <string name="cd_start_ship">Tàu vũ trụ</string>
+    <string name="cd_upgrade">Nâng cấp</string>
+    <string name="cd_achievement">Cúp thành tích</string>
+
+    <!-- Màn hình chính -->
+    <string name="main_pilot">PILOT:\nSCREAMER</string>
+    <string name="title_scream_shooter">SCREAM SHOOTER</string>
+    <string name="btn_start">BẮT ĐẦU</string>
+    <string name="btn_upgrade">NÂNG CẤP</string>
+    <string name="btn_achievement">THÀNH TÍCH</string>
+    <string name="profile_toast">PILOT: SCREAMER\nĐiểm cao nhất: %1$d Pts | Sao: %2$d ★</string>
+
+    <!-- Cài đặt -->
+    <string name="settings_sound">ÂM THANH</string>
+    <string name="settings_language">NGÔN NGỮ</string>
+    <string name="language_vi">Tiếng Việt</string>
+    <string name="language_en">English</string>
+
+    <!-- Nâng cấp -->
+    <string name="upgrade_title">NÂNG CẤP</string>
+    <string name="upgrade_health">MÁU</string>
+    <string name="upgrade_bullet_speed">TỐC ĐỘ ĐẠN</string>
+    <string name="upgrade_skill_time">THỜI GIAN KỸ NĂNG</string>
+    <string name="upgrade_magnet">NAM CHÂM</string>
+    <string name="upgrade_detail_title">CHI TIẾT NÂNG CẤP</string>
+    <string name="upgrade_detail_close">Đóng chi tiết</string>
+    <string name="upgrade_level_format">Cấp độ hiện tại: %1$d/%2$d</string>
+    <string name="upgrade_max">MAX</string>
+    <string name="upgrade_max_reached">Đã đạt cấp độ tối đa!</string>
+    <string name="upgrade_health_desc">Tăng khả năng chịu sát thương của tàu.</string>
+    <string name="upgrade_health_next">Cấp tiếp theo: +1 máu tối đa.</string>
+    <string name="upgrade_speed_desc">Tăng tốc độ bắn và tốc độ đạn.</string>
+    <string name="upgrade_speed_next">Cấp tiếp theo: bắn nhanh hơn và đạn nhanh hơn.</string>
+    <string name="upgrade_time_desc">Kéo dài thời gian hiệu lực của kỹ năng hét.</string>
+    <string name="upgrade_time_next">Cấp tiếp theo: +1 giây hiệu lực.</string>
+    <string name="upgrade_magnet_desc">Hút các ngôi sao ở gần tàu.</string>
+    <string name="upgrade_magnet_next">Cấp tiếp theo: tăng bán kính hút sao.</string>
+    <string name="upgrade_success">Nâng cấp thành công! Còn %1$d ★</string>
+    <string name="upgrade_not_enough">Không đủ sao! Cần %1$d ★</string>
+
+    <!-- Thành tích -->
+    <string name="achievement_title">THÀNH TÍCH</string>
+    <string name="achievement_1_name">CHIẾN BINH VŨ TRỤ</string>
+    <string name="achievement_1_desc">Đạt điểm số trong một lần chơi</string>
+    <string name="achievement_2_name">BẤT KHẢ CHIẾN BẠI</string>
+    <string name="achievement_2_desc">Hoàn thành các trận chơi</string>
+    <string name="achievement_3_name">TAY SĂN BÁU VẬT</string>
+    <string name="achievement_3_desc">Thu thập sao trong game</string>
+    <string name="achievement_completed">Đã hoàn thành tất cả mốc</string>
+    <string name="achievement_done">XONG</string>
+    <string name="achievement_already_complete">Bạn đã hoàn thành thành tích này!</string>
+    <string name="achievement_not_reached">Chưa đạt mốc %1$d!</string>
+    <string name="achievement_claim_success">Nhận thành công %1$d ★!</string>
+
+    <!-- Trong game -->
+    <string name="game_cannot_open">Không thể mở màn chơi!</string>
+    <string name="game_energy_full">⚡ Năng lượng đầy! Hãy lớn tiếng/hét vào Mic để bật Skill!</string>
+    <string name="game_skill_activated">⚡ KÍCH HOẠT THÀNH CÔNG THẦN CHƯỞNG VŨ TRỤ!</string>
+    <string name="hud_score">SCORE: %1$d</string>
+    <string name="hud_hp">"HP: "</string>
+    <string name="hud_energy">NĂNG LƯỢNG: %1$d%%</string>
+    <string name="hud_skill_ready">⚡ HÉT/LỚN TIẾNG ĐỂ KÍCH SKILL! (&gt;70dB)</string>
+    <string name="hud_skill_active">⚡ SUPER SCREAM SKILL ACTIVE ⚡</string>
+    <string name="hud_stars">★ %1$d</string>
+
+    <!-- Tạm dừng -->
+    <string name="pause_title">TẠM DỪNG</string>
+
+    <!-- Game Over -->
+    <string name="game_over_title">GAME OVER</string>
+    <string name="game_over_score">ĐIỂM ĐẠT ĐƯỢC: %1$d</string>
+    <string name="game_over_high_score">ĐIỂM CAO NHẤT: %1$d</string>
+    <string name="game_over_stars">SAO NHẶT ĐƯỢC: %1$d ★</string>
+    <string name="btn_restart">CHƠI LẠI</string>
+
+    <!-- Bảng xếp hạng -->
+    <string name="leaderboard_title">BẢNG XẾP HẠNG TOP 10</string>
 </resources>

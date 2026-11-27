@@ -45,6 +45,15 @@ public class LocalScoreManager {
         prefs.edit().putInt(Constants.KEY_COINS, totalCoins).apply();
     }
 
+    public synchronized boolean spendCoins(int amount) {
+        int current = getCoins();
+        if (amount < 0 || current < amount) {
+            return false;
+        }
+        prefs.edit().putInt(Constants.KEY_COINS, current - amount).apply();
+        return true;
+    }
+
     public void addScoreRecord(String playerName, int score) {
         saveHighScore(score);
 

@@ -20,13 +20,14 @@
             android:text="←"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:contentDescription="@string/back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="BẢNG XẾP HẠNG TOP 10"
+            android:text="@string/leaderboard_title"
             android:textColor="#FFF0A0"
             android:textSize="20sp"
             android:textStyle="bold" />

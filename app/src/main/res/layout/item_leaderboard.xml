@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_weight="1"
-        android:text="Người chơi"
+        android:text="@string/player_placeholder"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -34,7 +34,7 @@
         android:id="@+id/tvScore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1000 Pts"
+        android:text="0"
         android:textColor="#FFD700"
         android:textSize="16sp"
         android:textStyle="bold" />

@@ -45,7 +45,7 @@
                     <TextView
                         android:layout_width="76dp"
                         android:layout_height="wrap_content"
-                        android:text="ÂM THANH"
+                        android:text="@string/settings_sound"
                         android:textColor="#FFFFFF"
                         android:textSize="11sp"
                         android:textStyle="bold"
@@ -62,6 +62,17 @@
                         android:progressTint="#FFD400"
                         android:thumbTint="#FFD400"
                         android:progressBackgroundTint="#17141F" />
+
+                    <TextView
+                        android:id="@+id/tvVolumeValue"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="70%"
+                        android:textColor="#FFFFFF"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:maxLines="1" />
                 </LinearLayout>
 
                 <View
@@ -78,7 +89,7 @@
                     <TextView
                         android:layout_width="76dp"
                         android:layout_height="wrap_content"
-                        android:text="NGÔN NGỮ"
+                        android:text="@string/settings_language"
                         android:textColor="#FFFFFF"
                         android:textSize="11sp"
                         android:textStyle="bold"
@@ -94,22 +105,13 @@
                         android:paddingStart="3dp"
                         android:paddingEnd="3dp"
                         android:spinnerMode="dropdown" />
+
                 </LinearLayout>
 
             </LinearLayout>
         </FrameLayout>
 
         <!-- Tiêu đề căn giữa phía trên khung -->
-        <include
-            android:id="@+id/settingsTitle"
-            layout="@layout/view_overlay_title"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_gravity="top|center_horizontal"
-            android:elevation="4dp" />
-
-
-        <!-- Tiêu đề: hạ xuống một chút để không bị cắt dấu -->
         <include
             android:id="@+id/settingsTitle"
             layout="@layout/view_overlay_title"
@@ -135,7 +137,6 @@
                 android:layout_height="match_parent" />
 
         </FrameLayout>
-
 
     </FrameLayout>
 

@@ -10,7 +10,7 @@
     android:paddingBottom="2dp"
     android:includeFontPadding="true"
     android:singleLine="true"
-    android:text="Cài Đặt"
+    android:text="@string/settings_title"
     android:textColor="#FFF0A0"
     android:textSize="20sp"
     android:textStyle="bold"

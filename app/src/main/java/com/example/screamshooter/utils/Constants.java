@@ -11,6 +11,7 @@ public class Constants {
 
     // Cấu hình Auto-fire
     public static final long AUTO_FIRE_INTERVAL_MS = 180; // Bắn đạn tự động mỗi 180ms
+    public static final int STAR_SCORE_VALUE = 10; // Điểm cộng khi nhặt được sao
 
     // Cấu hình Năng lượng (FR06)
     public static final int MAX_ENERGY = 100;

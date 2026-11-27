@@ -16,19 +16,21 @@ public class Bullet {
 
     private Paint paint;
 
-    public Bullet(float startX, float startY, boolean isSkillBullet) {
+    public Bullet(float startX, float startY, boolean isSkillBullet, float speedMultiplier) {
         this.x = startX;
         this.y = startY;
         this.isSkillBullet = isSkillBullet;
 
+        float multiplier = Math.max(0.5f, speedMultiplier);
+
         if (isSkillBullet) {
             this.width = 16f;
             this.height = 48f;
-            this.speedY = -35f;
+            this.speedY = -35f * multiplier;
         } else {
             this.width = 10f;
             this.height = 30f;
-            this.speedY = -24f;
+            this.speedY = -24f * multiplier;
         }
 
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
