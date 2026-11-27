@@ -242,7 +242,7 @@ public class GameEngine implements
 
         // 3. Sinh quái vật ngẫu nhiên
         if (currentTime - lastEnemySpawnTime >= enemySpawnInterval) {
-            enemies.add(new Enemy(screenWidth, screenHeight));
+            enemies.add(new Enemy(context, screenWidth, screenHeight));
             lastEnemySpawnTime = currentTime;
 
             if (enemySpawnInterval > 500) {
@@ -356,11 +356,15 @@ public class GameEngine implements
                     ));
                     enemies.remove(j);
                     soundManager.playExplosion();
-                    playerShip.takeDamage(1);
 
-                    if (playerShip.isDead()) {
-                        triggerGameOver();
-                        break;
+                    if (isSkillActive) {
+                        score += enemy.getScoreValue(); // Khiên bảo vệ tiêu diệt quái và cộng điểm
+                    } else {
+                        playerShip.takeDamage(1);
+                        if (playerShip.isDead()) {
+                            triggerGameOver();
+                            break;
+                        }
                     }
                 }
             }
@@ -429,7 +433,7 @@ public class GameEngine implements
         }
 
         if (playerShip != null) {
-            playerShip.draw(canvas);
+            playerShip.draw(canvas, isSkillActive);
         }
 
         for (ParticleEffect pe : particles) {

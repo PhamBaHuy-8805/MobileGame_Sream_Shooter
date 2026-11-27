@@ -14,6 +14,7 @@ import com.example.screamshooter.R;
 public class PlayerShip {
 
     private Bitmap shipBitmap;
+    private Bitmap skillBitmap;
     private Bitmap engineBitmap;
     private Bitmap engineEffectBitmap;
 
@@ -51,6 +52,7 @@ public class PlayerShip {
 
         try {
             shipBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.player_ship);
+            skillBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.player_ship_skill);
             engineBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.player_engine);
             engineEffectBitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.engine_effect_idle);
         } catch (Exception e) {
@@ -66,46 +68,54 @@ public class PlayerShip {
         }
     }
 
-    public void draw(Canvas canvas) {
-        if (shipBitmap != null) {
-            // 1. Tia lửa động cơ
-            if (engineEffectBitmap != null) {
-                Rect effectSource = new Rect(
-                        currentFrame * FRAME_WIDTH,
-                        0,
-                        (currentFrame + 1) * FRAME_WIDTH,
-                        FRAME_HEIGHT
-                );
+    public void draw(Canvas canvas, boolean isSkillActive) {
+        // 1. Tia lửa động cơ
+        if (engineEffectBitmap != null) {
+            Rect effectSource = new Rect(
+                    currentFrame * FRAME_WIDTH,
+                    0,
+                    (currentFrame + 1) * FRAME_WIDTH,
+                    FRAME_HEIGHT
+            );
 
-                float effectW = width * 0.5f;
-                float effectH = height * 0.5f;
-                float effectX = x + (width - effectW) / 2f;
-                float effectY = y + height * 0.75f;
+            float effectW = width * 0.5f;
+            float effectH = height * 0.5f;
+            float effectX = x + (width - effectW) / 2f;
+            float effectY = y + height * 0.75f;
 
-                RectF effectDst = new RectF(effectX, effectY, effectX + effectW, effectY + effectH);
-                canvas.drawBitmap(engineEffectBitmap, effectSource, effectDst, paint);
-            }
+            RectF effectDst = new RectF(effectX, effectY, effectX + effectW, effectY + effectH);
+            canvas.drawBitmap(engineEffectBitmap, effectSource, effectDst, paint);
+        }
 
-            // 2. Động cơ
-            if (engineBitmap != null) {
-                float engineW = width * 0.45f;
-                float engineH = height * 0.45f;
-                float engineX = x + (width - engineW) / 2f;
-                float engineY = y + height * 0.6f;
+        // 2. Động cơ
+        if (engineBitmap != null) {
+            float engineW = width * 0.45f;
+            float engineH = height * 0.45f;
+            float engineX = x + (width - engineW) / 2f;
+            float engineY = y + height * 0.6f;
 
-                RectF engineDst = new RectF(engineX, engineY, engineX + engineW, engineY + engineH);
-                canvas.drawBitmap(engineBitmap, null, engineDst, paint);
-            }
+            RectF engineDst = new RectF(engineX, engineY, engineX + engineW, engineY + engineH);
+            canvas.drawBitmap(engineBitmap, null, engineDst, paint);
+        }
 
-            // 3. Thân phi thuyền
+        // 3. Thân phi thuyền (Sử dụng player_ship_skill.png khi bật khiên kỹ năng, ngược lại dùng player_ship.png)
+        Bitmap currentShipBitmap = (isSkillActive && skillBitmap != null) ? skillBitmap : shipBitmap;
+        if (currentShipBitmap != null) {
             RectF shipDst = new RectF(x, y, x + width, y + height);
-            canvas.drawBitmap(shipBitmap, null, shipDst, paint);
-
+            canvas.drawBitmap(currentShipBitmap, null, shipDst, paint);
         } else {
-            // Fallback vẽ hình tam giác nếu thiếu Bitmap
             Paint shipPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
             shipPaint.setColor(Color.CYAN);
             canvas.drawRect(x, y, x + width, y + height, shipPaint);
+        }
+
+        // 4. Hiệu ứng vòng khiên bảo vệ (Shield Aura) khi skill kích hoạt
+        if (isSkillActive) {
+            Paint shieldPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            shieldPaint.setStyle(Paint.Style.STROKE);
+            shieldPaint.setColor(Color.parseColor("#00E5FF")); // Xanh Cyan sáng
+            shieldPaint.setStrokeWidth(8f);
+            canvas.drawCircle(x + width / 2f, y + height / 2f, width * 0.75f, shieldPaint);
         }
     }
 
